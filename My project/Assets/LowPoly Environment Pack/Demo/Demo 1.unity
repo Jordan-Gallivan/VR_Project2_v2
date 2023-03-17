@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1024319088}
-  m_IndirectSpecularColor: {r: 0.5057807, g: 0.4417924, b: 0.45548674, a: 1}
+  m_IndirectSpecularColor: {r: 0.5057789, g: 0.44179046, b: 0.4554842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &77018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9102361585455222817, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
+  m_PrefabInstance: {fileID: 1803872357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &77023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f91429cfa32b4c3295543395977b054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIsSelected: 0
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 13
+  movementPattern: 0
+  distToBeginInteraction: Infinity
 --- !u!1001 &4001232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1452,12 +1475,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 6
+  movementPattern: 2
+  distToBeginInteraction: Infinity
 --- !u!1 &146764189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4
+      value: -14.61
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3030,7 +3052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.73
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3442,31 +3464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
---- !u!114 &540150940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540150933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f91429cfa32b4c3295543395977b054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 8
+  movementPattern: 2
+  distToBeginInteraction: Infinity
 --- !u!4 &563421972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4981051142307027526, guid: 4a3758cb321c4c6448e79f92d8caa0b8, type: 3}
@@ -4004,12 +4006,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 16
+  movementPattern: 0
+  distToBeginInteraction: Infinity
 --- !u!1001 &670371343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5481,12 +5482,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 17
+  movementPattern: 5
+  distToBeginInteraction: 50
 --- !u!1001 &878971480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7498,12 +7498,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 15
+  movementPattern: 4
+  distToBeginInteraction: Infinity
 --- !u!1 &1303734552
 GameObject:
   m_ObjectHideFlags: 0
@@ -8567,11 +8566,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIsSelected: 0
   moveItem: 1
-  movementPatternIndex: 1
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  player: {fileID: 286735640}
+  duration: 10
+  movementPattern: 2
+  distToBeginInteraction: Infinity
 --- !u!1001 &1526242758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10166,12 +10164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIsSelected: 0
-  moveItem: 0
-  movementPatternIndex: 0
-  movementPatterns:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.01}
-  - {x: 0.1, y: 0, z: 0.01}
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 13
+  movementPattern: 1
+  distToBeginInteraction: Infinity
 --- !u!1001 &1785795468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10415,19 +10412,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10435,7 +10432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10746,19 +10743,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10766,7 +10763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5597806094475253325, guid: 8dd91e334b3cf8f48892241cd117ec27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
