@@ -89,6 +89,12 @@ public class GameScript : MonoBehaviour
             ForceMode.VelocityChange);
     }
 
+    public void RotatePlayer(Vector2 trackPad)
+    {
+        // - vector2.x == + rotation about y axis
+        rb.AddTorque(0f, - trackPad.x * velocityConstant, 0f, ForceMode.VelocityChange);
+    }
+
     public void rayDown()
     {
         //////////////  cleaned up code //////////////////

@@ -30,6 +30,7 @@ public class ActionListener2 : MonoBehaviour
     [SerializeField] private InputActionReference leftGrasp;
     [SerializeField] private InputActionReference rightGrasp;
     [SerializeField] private InputActionReference trackPad;
+    [SerializeField] private InputActionReference rightTrackPad;
     [SerializeField] private InputActionReference leftControllerPos;
     [SerializeField] private InputActionReference leftControllerRotation;
 
@@ -119,8 +120,9 @@ public class ActionListener2 : MonoBehaviour
         /////   Update Player and Item      /////
         /////////////////////////////////////////
 
-        // move the player according to trackpad input
+        // move and rotate the player according to trackpad input
         player.MovePlayer(trackPad.action.ReadValue<Vector2>());
+        player.RotatePlayer(rightTrackPad.action.ReadValue<Vector2>());
         
         // move and rotate selected item
         if (itemIsMoving && itemIsRotating)
