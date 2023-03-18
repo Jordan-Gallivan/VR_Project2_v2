@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1024319088}
-  m_IndirectSpecularColor: {r: 0.5057789, g: 0.44179046, b: 0.4554842, a: 1}
+  m_IndirectSpecularColor: {r: 0.5057807, g: 0.4417924, b: 0.45548674, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1038,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112068, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 413848, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_RootOrder
@@ -3627,19 +3627,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 590299078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e5925b374b9224ebfd425337b6ef62, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f91429cfa32b4c3295543395977b054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 0
-  ySpeed: 0
-  zSpeed: 0
-  speed: {x: 0, y: 0, z: 0}
-  minDist: 2
-  dist: 0
-  playerObj: {fileID: 0}
-  playerInRange: 0
-  lastAttackTime: 0
-  bulletPrefab: {fileID: 0}
+  itemIsSelected: 0
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 3
+  movementPattern: 0
+  distToBeginInteraction: Infinity
 --- !u!1001 &608353039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4825,19 +4821,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 817164289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e5925b374b9224ebfd425337b6ef62, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f91429cfa32b4c3295543395977b054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 0
-  ySpeed: 0
-  zSpeed: 0
-  speed: {x: 0, y: 0, z: 0}
-  minDist: 2
-  dist: 0
-  playerObj: {fileID: 0}
-  playerInRange: 0
-  lastAttackTime: 0
-  bulletPrefab: {fileID: 0}
+  itemIsSelected: 0
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 5
+  movementPattern: 3
+  distToBeginInteraction: Infinity
 --- !u!1001 &818834813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7249,7 +7241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112068, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 413848, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_RootOrder
@@ -7643,7 +7635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112068, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 413848, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
       propertyPath: m_RootOrder
@@ -9998,19 +9990,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753517030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e5925b374b9224ebfd425337b6ef62, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f91429cfa32b4c3295543395977b054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 0
-  ySpeed: 0
-  zSpeed: 0
-  speed: {x: 0, y: 0, z: 0}
-  minDist: 2
-  dist: 0
-  playerObj: {fileID: 0}
-  playerInRange: 0
-  lastAttackTime: 0
-  bulletPrefab: {fileID: 0}
+  itemIsSelected: 0
+  moveItem: 1
+  player: {fileID: 286735640}
+  duration: 5
+  movementPattern: 2
+  distToBeginInteraction: Infinity
 --- !u!1001 &1755090057
 PrefabInstance:
   m_ObjectHideFlags: 0
