@@ -103,7 +103,7 @@ public class TractorBeam : MonoBehaviour
                     hit.collider.CompareTag("summonable") )
                 {
                     // "release" previously selected item
-                    if ( movableItem ) movableItem.itemIsSelected = false;
+                    if ( movableItem ) movableItem.ItemIsSelected = false;
                     
                     nearest = hit.distance; // reset comparrison distance
                     
@@ -174,7 +174,7 @@ public class TractorBeam : MonoBehaviour
         if (selectedItem != null)
         {
             itemSelected = true;
-            if (movableItem != null) movableItem.itemIsSelected = true;
+            if (movableItem != null) movableItem.ItemIsSelected = true;
             var glowRenderer = glowSphere.GetComponent<Renderer>();
             glowRenderer.material.SetColor("_Color", SelectedGlow);
         }
@@ -183,7 +183,7 @@ public class TractorBeam : MonoBehaviour
     public void DeSelectNearestItem()
     {
         itemSelected = false;
-        if (movableItem != null) movableItem.itemIsSelected = false;
+        if (movableItem != null) movableItem.ItemIsSelected = false;
         var glowRenderer = glowSphere.GetComponent<Renderer>();
         glowRenderer.material.SetColor("_Color", normalGlow);
     }
@@ -203,7 +203,7 @@ public class TractorBeam : MonoBehaviour
         if (!itemBeingMoved)
         {
             selectedItem.transform.Translate(Vector3.right * 10f, player.transform);
-            movableItem.itemIsSelected = false;
+            movableItem.ItemIsSelected = false;
             itemSelected = false;
             selectedItem = null;
 

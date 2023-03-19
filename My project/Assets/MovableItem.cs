@@ -6,15 +6,21 @@ using UnityEngine;
 public class MovableItem : MonoBehaviour
 {
     // TractorBeam and identity variables
-    public bool itemIsSelected = false;
+    private bool itemIsSelected = false;
+    public bool ItemIsSelected
+    {
+        get => itemIsSelected;
+        set => itemIsSelected = value;
+    }
     public bool moveItem = false;
-    [SerializeField] private GameObject player;
+    
     private GameObject item;
     
     // speed coefficients 
-    private float xSpeed = 0.002f;
-    private float ySpeed = 0.002f;
-    private float zSpeed = 0.002f;
+    [Header("Movement Speed")]
+    [Range(0.0005f, 0.002f)] public float xSpeed = 0.002f;
+    [Range(0.0005f, 0.002f)] public float ySpeed = 0.002f;
+    [Range(0.0005f, 0.002f)] public float zSpeed = 0.002f;
     private Vector3 speed = Vector3.zero;
     
     // time variables
@@ -32,8 +38,11 @@ public class MovableItem : MonoBehaviour
         TowardsUser,
         AwayFromUser
     };
+    [Header("Movement Pattern")]
     [SerializeField] private Movements movementPattern = new Movements();
-
+    
+    [Header("Player Interaction")]
+    [SerializeField] private GameObject player;
     private float distToUser;
     // update to smaller distance interactables should be delayed
     // until user approaches within a certain distance
@@ -101,4 +110,5 @@ public class MovableItem : MonoBehaviour
             startTime = Time.time;  // reset start time
         }
     }
+    
 }
