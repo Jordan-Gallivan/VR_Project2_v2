@@ -18,7 +18,7 @@ public class TractorBeam : MonoBehaviour
     private Vector3 playerPos;
 
     // Initialize Selected Item Characteristics
-    public GameObject selectedItem;
+    private GameObject selectedItem;
     private MovableItem movableItem;    // MovableItem Object to toggle organic movement
     private Vector3 itemPos;            // current position of selected Item
     private Quaternion itemOrientation; // current orientation of the selected Item
@@ -257,6 +257,15 @@ public class TractorBeam : MonoBehaviour
     public void EndRotation()
     {
         itemBeingRotated = false;
+    }
+    
+    /**
+     * returns true if selected item == null
+     * (no item is currently selected in the tractor beam)
+     */
+    public bool SelectedItemNull()
+    {
+        return selectedItem == null;
     }
 
     

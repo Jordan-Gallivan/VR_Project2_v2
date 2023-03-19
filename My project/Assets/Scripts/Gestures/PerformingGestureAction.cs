@@ -70,12 +70,12 @@ namespace Gestures
 
         private void ProcessInput()
         {
-            if (tractorBeam.selectedItem != null /*performGestureInputAction.action.WasPressedThisFrame()*/)
+            if (!tractorBeam.SelectedItemNull() /*performGestureInputAction.action.WasPressedThisFrame()*/)
             {
                 GestureActionDown();
             }
 
-            if (performGestureInputAction.action.WasReleasedThisFrame())
+            if ( tractorBeam.SelectedItemNull() /*performGestureInputAction.action.WasReleasedThisFrame()*/)
             {
                 GestureActionUp();
             }

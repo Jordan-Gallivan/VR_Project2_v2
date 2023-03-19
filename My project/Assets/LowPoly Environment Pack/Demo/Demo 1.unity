@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1024319088}
-  m_IndirectSpecularColor: {r: 0.5057807, g: 0.4417924, b: 0.45548674, a: 1}
+  m_IndirectSpecularColor: {r: 0.5057789, g: 0.44179046, b: 0.4554842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1243,6 +1243,57 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: -8484699535902864308, guid: 5239dccfc15b0d948bfde8af0dbdf36b, type: 3}
   m_PrefabInstance: {fileID: 4966877282781335823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &127355503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127355505}
+  - component: {fileID: 127355504}
+  m_Layer: 0
+  m_Name: GesureActionExecuter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &127355504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127355503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff24d29f4e1a2e841be212be354d8d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps1: {fileID: 0}
+  ps2: {fileID: 0}
+  ps3: {fileID: 0}
+  ps4: {fileID: 0}
+  ps5: {fileID: 0}
+  ps6: {fileID: 0}
+  tractorBeam: {fileID: 2064146042}
+--- !u!4 &127355505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127355503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6904964, y: 4.088703, z: 7.850131}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &135287601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5563,7 +5614,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887292462}
-  - component: {fileID: 887292461}
   - component: {fileID: 887292460}
   - component: {fileID: 887292463}
   m_Layer: 0
@@ -5585,30 +5635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83b50af1f07f874784173fc1440be63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionExecuter: {fileID: 887292461}
-  gestureDirectoryPath: 
-  disableActionExecution: 1
+  actionExecuter: {fileID: 127355504}
+  gestureDirectoryPath: /Users/jordangallivan/VR_Project_1/VR_Project2_v2/My project/Assets/Dataset/
+  disableActionExecution: 0
   debugText: {fileID: 0}
   useAsDirection: 0
---- !u!114 &887292461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887292459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff24d29f4e1a2e841be212be354d8d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps1: {fileID: 0}
-  ps2: {fileID: 0}
-  ps3: {fileID: 0}
-  ps4: {fileID: 0}
-  ps5: {fileID: 0}
-  ps6: {fileID: 0}
-  tractorBeam: {fileID: 2064146042}
 --- !u!4 &887292462
 Transform:
   m_ObjectHideFlags: 0
@@ -5636,7 +5667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bb4f498bae02647aef10100dc535e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  performGestureInputAction: {fileID: -6395602842196007441, guid: c72bc4421bdbc5b48beb4d3ccb091414, type: 3}
+  performGestureInputAction: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rotationInvarianceTransform: {fileID: 563421972}
   rightHand: {fileID: 881147009}
   tractorBeam: {fileID: 2064146042}
