@@ -13,7 +13,7 @@ namespace Gestures
         [Tooltip("Right hand controller from hierarcy")]
         public Transform rightHand;
 
-        public TractorBeam tractorBeam;
+        // public TractorBeam tractorBeam;
 
         [Header("Recognizer Settings")]
         [Tooltip("The Recognizer instance")]
@@ -70,12 +70,12 @@ namespace Gestures
 
         private void ProcessInput()
         {
-            if (!tractorBeam.SelectedItemNull() /*performGestureInputAction.action.WasPressedThisFrame()*/)
+            if (/*!tractorBeam.SelectedItemNull() */ performGestureInputAction.action.WasPressedThisFrame())
             {
                 GestureActionDown();
             }
 
-            if ( tractorBeam.SelectedItemNull() /*performGestureInputAction.action.WasReleasedThisFrame()*/)
+            if ( /*tractorBeam.SelectedItemNull() */ performGestureInputAction.action.WasReleasedThisFrame())
             {
                 GestureActionUp();
             }

@@ -25,6 +25,11 @@ public class TractorBeam : MonoBehaviour
     private Vector3 itemRotatedOrientation;  // orientation user wants to rotate the item to
     private Vector3 itemDestPos;    // position user wants to move object to
     private float distToItem;   // magnitude of vector between player and item
+    public float movementConstant = 1f;
+    public float waiveOffConstant = .5f;
+    private bool itemWaivingOff = false;
+    private Vector3 waiveDest = Vector3.zero;
+    private GameObject waiveOffItem;
 
     // tractor beam materials and objects
     public GameObject beamRender;
@@ -87,7 +92,7 @@ public class TractorBeam : MonoBehaviour
             distToItem = Vector3.Distance(playerPos, itemPos);
             glowSphere.transform.position = itemPos;
         }
-
+        glowSphere.SetActive(false);
         // Initializes the tractor beam by sphere casting in the direction of the controller
         // the closest "summonable" item is set as this.itemSelected if one exists
         if ( tractorBeamActive && !itemSelected)
@@ -115,13 +120,14 @@ public class TractorBeam : MonoBehaviour
                     itemOrientation = this.selectedItem.transform.rotation;
                     distToItem = Vector3.Distance(playerPos, itemPos);
                     
-                    // add glow sphere to nearest item
-                    glowSphere.SetActive(true);
-                    glowSphere.transform.position = itemPos;
+                    
                 }
             }
+            // add glow sphere to nearest item
+            
         } // end tractorbeam update
-        
+        glowSphere.SetActive(true);
+        glowSphere.transform.position = itemPos;
         // summons the item by transforming it in the direction of the player
         if ( itemSelected && summonActive )
         {
@@ -132,15 +138,27 @@ public class TractorBeam : MonoBehaviour
             itemOrientation = this.selectedItem.transform.rotation;
             // time.deltaTime how much time elapses between frames
         }
+
         
         // move item towards intended location
         if (itemBeingMoved && itemSelected)
         {
-            selectedItem.transform.position = Vector3.MoveTowards(itemPos, itemDestPos, Time.deltaTime * 5);
+            selectedItem.transform.position = Vector3.MoveTowards(itemPos, itemDestPos, Time.deltaTime * movementConstant);
             itemOrientation = this.selectedItem.transform.rotation;
             if (itemPos == itemDestPos)
             {
                 itemBeingMoved = false;
+            }
+        }
+        if (itemWaivingOff)
+        {
+            waiveOffItem.transform.position = Vector3.MoveTowards(waiveOffItem.transform.position, waiveDest, Time.deltaTime * movementConstant);
+            
+            if (Vector3.Distance(waiveOffItem.transform.position, waiveDest) < 1 )
+            {
+                itemWaivingOff = false;
+                movableItem.ItemIsSelected = false;
+                
             }
         }
 
@@ -202,11 +220,14 @@ public class TractorBeam : MonoBehaviour
     {
         if (!itemBeingMoved)
         {
-            selectedItem.transform.Translate(Vector3.right * 10f, player.transform);
-            movableItem.ItemIsSelected = false;
-            itemSelected = false;
+            Debug.Log("waive off");
+            itemWaivingOff = true;
+            var rightVector = player.transform.position - (2 * playerPos);
+            waiveDest = selectedItem.transform.position - rightVector;
+            waiveDest = new Vector3(waiveDest.x, selectedItem.transform.position.y, waiveDest.z);
+            waiveOffItem = selectedItem;
             selectedItem = null;
-
+            itemSelected = false;
             var glowRenderer = glowSphere.GetComponent<Renderer>();
             glowRenderer.material.SetColor("_Color", normalGlow);
             glowSphere.SetActive(false);

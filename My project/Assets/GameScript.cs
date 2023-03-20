@@ -17,6 +17,8 @@ public class GameScript : MonoBehaviour
     public float playerHeight = 1.5f;
 
     public float velocityConstant = 2.0f;
+    public float rotationConstant = 50.0f;
+    private Vector3 currTorque = Vector3.zero;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class GameScript : MonoBehaviour
     {
         Movement();
         rayDown();
+        
     }
 
     public void Movement()
@@ -92,7 +95,10 @@ public class GameScript : MonoBehaviour
     public void RotatePlayer(Vector2 trackPad)
     {
         // - vector2.x == + rotation about y axis
-        rb.AddTorque(0f, - trackPad.x * velocityConstant, 0f, ForceMode.VelocityChange);
+        if (!(trackPad.x > -0.2 && trackPad.x < 0.2))
+        {
+           player.transform.Rotate(new Vector3(0f, trackPad.x * rotationConstant, 0f), Space.Self);
+        }
     }
 
     public void rayDown()
